@@ -1,4 +1,5 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/EngAhmedHady/ShockTrackingLibrary/blob/main/LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12207364.svg)](https://doi.org/10.5281/zenodo.12207364) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/EngAhmedHady/CurvedSurfaceReconstraction/blob/main/LICENSE))
+
 
 
 # Curved Surface Reconstruction Library
