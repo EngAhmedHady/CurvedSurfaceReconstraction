@@ -74,7 +74,7 @@ class BCOLOR:  # For coloring the text in terminal
     ITALIC = '\033[3m'
     UNDERLINE = '\033[4m'
 
-class PerspectiveImageRebuild:
+class ImgReconstraction:
     def __init__(self) -> None:
         pass
 
