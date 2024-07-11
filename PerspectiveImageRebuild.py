@@ -41,14 +41,14 @@ class CVColor:
 # imgPath = '2023_02_07\\*.JPG'
 # imgPath = 'Oil Visualization\\P3-Ref\\*.JPG'
 # imgPath = 'D:\\PhD\\TEAMAero\\2023_02_07 - Oil visualization (FullyOpen and HalfOpen)\\Half-open\\With suction\\Test 7\\*.JPG'
-# imgPath = r'D:\PhD\TEAMAero\TFAST oil\Oil Test 2\*.jpg'
+imgPath = r'D:\PhD\TEAMAero\TFAST oil\Oil Test 2\*.jpg'
 # imgPath = r'D:\TFAST\TEAMAero experiments\Roughness study\Smooth profile (P1)\2023_05_25\Test 18 Oil (100mm)\*.jpg'
 # imgPath = r'..\D4.1\100mm.jpg'
 
 
 # imgPath = r'..\D4.1\35mm.jpg'
 # imgPath = '2022_09_14\\Oil Test 2\\*.JPG'
-imgPath = r'D:\TFAST\TEAMAero experiments\Roughness study\Smooth profile (P1)\2023_05_25\Test 18 Oil (100mm)\*.jpg'
+# imgPath = r'D:\TFAST\TEAMAero experiments\Roughness study\Smooth profile (P1)\2023_05_25\Test 18 Oil (100mm)\*.jpg'
 # imgPath = 'D:\\TFAST\\TEAMAero experiments\\Roughness study\\Rough profile (P4)\\2023_04_24\\Test 16-OH\\*.jpg'
 # imgPath = 'C:\\Users\\Hady-PC\\Desktop\\PhD\\TFAST\\TEAMAero Experiments\\2023_04_24\\Test 15-OD\\*.jpg'
 # imgPath = 'D:\\TFAST\\TEAMAero experiments\\2023_05_10\\Test 17-OH 35mm\\*.jpg'
@@ -517,28 +517,28 @@ if __name__ == '__main__':
                                                      [Reference[4][0][0],
                                                       Reference[0][0][0]])
 
-                # cv2.putText(clone, 'P4', P4int,cv2.FONT_HERSHEY_SIMPLEX, 1,0)
+                cv2.putText(clone, 'P4', P4int,cv2.FONT_HERSHEY_SIMPLEX, 1,0)
                 # Right z-line (2)
                 P5int, IntAngle5 = IntersectionPoint([m5, m2], [a5, a2],
                                                      [Reference[4][0][0],
                                                       Reference[1][0][0]])
-                # cv2.putText(clone,'P5',P5int, cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
+                cv2.putText(clone,'P5',P5int, cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
 
                 # Finding intersection points between Y projection lines
                 # and far profile chord # left z-line
                 P6int, IntAngle6 = IntersectionPoint([m6, m1], [a6, a1],
                                                      [Reference[5][0][0],
                                                       Reference[0][0][0]])
-                # cv2.putText(clone, 'P6', P6int, cv2.FONT_HERSHEY_SIMPLEX,1,0)
+                cv2.putText(clone, 'P6', P6int, cv2.FONT_HERSHEY_SIMPLEX,1,0)
                 # right z-line
                 P7int, IntAngle7 = IntersectionPoint([m6, m2], [a6, a2],
                                                      [Reference[5][0][0],
                                                       Reference[1][0][0]])
-                # cv2.putText(clone, 'P7', P7int, cv2.FONT_HERSHEY_SIMPLEX,1,0)
+                cv2.putText(clone, 'P7', P7int, cv2.FONT_HERSHEY_SIMPLEX,1,0)
 
                 IntersectionVeri += 1
                 if len(P4int) > 1:
-                    cv2.circle(clone, P4int, radius=3,
+                    cv2.circle(clone, P4int, radius=10,
                                color=CVColor.YELLOW, thickness=-1)
                     my1, ay1 = IncParameters(Vy, P4int)
                     cv2.line(clone, Vy, P4int, CVColor.GREEN, 1)
@@ -546,7 +546,7 @@ if __name__ == '__main__':
                           P4int)
                     IntersectionVeri += 1
                 if len(P5int) > 1:
-                    cv2.circle(clone, P5int, radius=3,
+                    cv2.circle(clone, P5int, radius=10,
                                color=CVColor.YELLOW, thickness=-1)
                     my2, ay2 = IncParameters(Vy, P5int)
                     cv2.line(clone, Vy, P5int, CVColor.GREEN, 1)
@@ -557,7 +557,7 @@ if __name__ == '__main__':
 
                     IntersectionVeri += 1
                 if len(P6int) > 1:
-                    cv2.circle(clone, P6int, radius=3,
+                    cv2.circle(clone, P6int, radius=10,
                                color=CVColor.YELLOW, thickness=-1)
                     my3, ay3 = IncParameters(Vy, P6int)
                     cv2.line(clone, Vy, P6int, CVColor.GREEN, 1)
@@ -567,7 +567,7 @@ if __name__ == '__main__':
 
                     IntersectionVeri += 1
                 if len(P7int) > 1:
-                    cv2.circle(clone, P7int, radius=3,
+                    cv2.circle(clone, P7int, radius=10,
                                color=CVColor.YELLOW, thickness=-1)
                     my4, ay4 = IncParameters(Vy, P7int)
                     cv2.line(clone, Vy, P7int, CVColor.GREEN, 1)
@@ -588,8 +588,8 @@ if __name__ == '__main__':
                                                             P4int[1]])
                     cv2.circle(clone, P5xint, radius=3,
                                color=CVColor.YELLOW, thickness=-1)
-                    # cv2.putText(clone, 'P5xint',
-                    #             P5xint, cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
+                    cv2.putText(clone, 'P5xint',
+                                P5xint, cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
                     cv2.line(clone, Vx, P5xint, CVColor.RED, 1)
                     cv2.line(clone, P5int, P5xint, CVColor.GREEN, 1)
                     if Vx[0] > P0[0]:
@@ -602,8 +602,8 @@ if __name__ == '__main__':
 
                     cv2.circle(clone, P4xint, radius=3,
                                color=CVColor.YELLOW, thickness=-1)
-                    # cv2.putText(clone, 'P4xint', P4xint,
-                    #             cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
+                    cv2.putText(clone, 'P4xint', P4xint,
+                                cv2.FONT_HERSHEY_SIMPLEX, 1, 0)
 
                     NearProfile = FindProfilePoints(P4int, P5int,
                                                     [PChint, IntAngleCh[0]],
